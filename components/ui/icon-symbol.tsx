@@ -15,14 +15,22 @@ type IconSymbolName = keyof typeof MAPPING;
  */
 const MAPPING = {
   'house.fill': 'home',
+  'house': 'home',
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
   'square.grid.2x2.fill': 'apps',
   'chart.pie.fill': 'pie-chart',
+  'chart.bar.fill': 'bar-chart',
+  'chart.bar': 'bar-chart',
   'plus.circle.fill': 'add-circle',
+  'plus': 'add',
   'creditcard.fill': 'credit-card',
+  'creditcard': 'credit-card',
   'person.fill': 'person',
+  'person': 'person-outline',
+  'doc.text.fill': 'receipt',
+  'doc.text': 'description',
   'sun.max.fill': 'wb-sunny',
   'moon.fill': 'dark-mode',
 } as IconMapping;
