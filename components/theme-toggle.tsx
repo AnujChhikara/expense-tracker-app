@@ -1,30 +1,28 @@
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { useTheme } from '@/contexts/theme-context';
-import { Colors } from '@/constants/theme';
+
+// Helper to get icon colors matching Tailwind theme
+const getIconColor = (isDark: boolean) => {
+  return isDark ? "#F5F5F5" : "#1A1A1A";
+};
 
 export function ThemeToggle() {
   const { colorScheme, toggleTheme } = useTheme();
+  const isDark = colorScheme === 'dark';
 
   return (
     <TouchableOpacity
       onPress={toggleTheme}
-      style={styles.button}
+      className="w-11 h-11 rounded-xl bg-card justify-center items-center"
       accessibilityLabel="Toggle theme"
       accessibilityRole="button">
       <IconSymbol
-        name={colorScheme === 'dark' ? 'sun.max.fill' : 'moon.fill'}
+        name={isDark ? 'sun.max.fill' : 'moon.fill'}
         size={24}
-        color={Colors[colorScheme].icon}
+        color={getIconColor(isDark)}
       />
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  button: {
-    padding: 8,
-    marginRight: 8,
-  },
-});
 
